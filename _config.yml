@@ -1,1 +1,55 @@
 
+# config.yml for GitHub Pages (Jekyll)
+
+# Site settings
+title: "Shraddha."
+description: "A short description of the site"
+url: "https://1906shra.github.io"  # Replace with your GitHub Pages URL
+baseurl: "/"  # Leave as is for GitHub Pages
+
+# Markdown settings
+markdown: kramdown  # You can use kramdown or any other markdown processor
+
+# Plugins (optional)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Theme (example, can be changed)
+theme: jekyll-theme-minimal  # This can be any GitHub Pages theme
+
+# Exclude directories from build to prevent them from affecting preview
+exclude:
+  - "README.md"       # Exclude if you don’t want the README to appear in the site preview
+  - "Gemfile"          # Exclude Gemfile and Gemfile.lock if you're using them locally but don't want them in the preview
+  - "Gemfile.lock"
+  - "node_modules"     # Exclude node_modules directory if you're using npm but don't want it built
+  - "tests"            # Any other folders that might affect the preview if they’re included
+
+# Optional: Prevent certain files from appearing in the preview
+defaults:
+  - scope:
+      path: "_posts"
+    values:
+      layout: post
+
+# Permalinks configuration (optional)
+permalink: /:year/:month/:day/:title/
+
+# Asset configurations (optional)
+assets:
+  enable: true
+  path: /assets/  # Set path for assets, such as images or stylesheets
+
+# Jekyll build settings
+defaults:
+  - scope:
+      path: ""  # The entire site
+    values:
+      layout: "default"
+
+# Site preview handling
+build:
+  draft: false    # Disable drafts from being shown on preview builds
+  future: false   # Disable future posts from showing in the preview
+  show_drafts: false  # If using drafts, make sure they don't show up in preview
